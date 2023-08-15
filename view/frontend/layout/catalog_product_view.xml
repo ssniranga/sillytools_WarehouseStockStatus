@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View"
+                   name="sillytools.stock-availability"
+                   after="product.info">
+                <arguments>
+                    <argument name="template" xsi:type="string">
+                        SillyTools_WarehouseStockStatus::catalog/product/stock_availability.phtml
+                    </argument>
+                    <argument name="stock_status_view_model" xsi:type="object">
+                        SillyTools\WarehouseStockStatus\ViewModel\Stock
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="product.info.addtocart">
+            <arguments>
+                <argument name="stock_status_view_model" xsi:type="object">SillyTools\WarehouseStockStatus\ViewModel\Stock
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="sillytools" translate="label" sortOrder="10">
+            <label>SillyTools</label>
+        </tab>
+        <section id="warehousestockstatus" translate="label" type="text" sortOrder="11" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Warehouse Stock Status</label>
+            <tab>sillytools</tab>
+            <resource>SillyTools_WarehouseStockStatus::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General settings</label>
+                <field id="version" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>SillyTools\Core\Block\Adminhtml\System\Config\Form\Info</frontend_model>
+                </field>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

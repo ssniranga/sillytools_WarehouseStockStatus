@@ -1,0 +1,39 @@
+<?php
+use Magento\Catalog\Block\Product\View;
+use Magento\Framework\Escaper;
+
+/**
+ * @var View $block
+ * @var Escaper $escaper
+ */
+
+$_product = $block->getProduct();
+
+?>
+
+<?php if ($_product->isSaleable() && $block->getStockStatusViewModel()->isEnabled()): ?>
+    <?php $stockItems = $block->getStockStatusViewModel()->getStockQuantityFromSource($_product->getSku()) ?>
+    <div class="sillytools-stock-availability-wrapper">
+        <h5 class="stock-availability-title"><?= $escaper->escapeHtml(__('Stock Availability')) ?>
+            <span class="stock-tooltip">
+                <span class="moreinfo tooltip-toggle">(More info)</span>
+                <span class="tooltip-content">
+                    <strong><?= $escaper->escapeHtml(__('Out of stock at your local warehouse?')) ?></strong><br>
+                    <?= $escaper->escapeHtml(__('Yes, you can still order!')) ?><br><br>
+                    <i><?= $escaper->escapeHtml(__('Please note: there may be delays and additional shipping charges for interstate deliveries. Shipping charges will be calculated at checkout.')) ?></i>
+                </span>
+            </span>
+        </h5>
+
+        <ul class="stock-availability">
+            <?php foreach ($stockItems as $stockItem): ?>
+            <?php $stockClass = ($stockItem->getQuantity() > 0) ? 'fa-check-circle' : 'fa-times-circle'; ?>
+                <li>
+                    <span><?php echo $stockItem->getState() ?></span>
+                    <i class="fa fa-regular <?= $stockClass ?>"></i>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+<?php endif; ?>
+

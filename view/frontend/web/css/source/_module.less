@@ -1,0 +1,97 @@
+& when (@media-common = true) {
+  .catalog-product-view {
+    .page-wrapper {
+      #maincontent {
+        .column.main {
+          .product-info-main {
+            .product-add-form form {
+              .box-tocart {
+                margin-bottom: 20px !important;
+
+                .fieldset {
+                  margin-bottom: 0px !important;
+                }
+
+                #buy-now {
+                  display: block;
+                }
+              }
+            }
+
+            .sillytools-stock-availability-wrapper {
+              padding: 0 0 20px;
+
+              .stock-availability-title {
+                margin: 0 0 10px;
+              }
+
+              .stock-tooltip {
+                .lib-tooltip(right);
+
+                i.fa {
+                  color: #78b54e;
+                  font-size: 16px;
+                }
+
+                .tooltip-content {
+                  z-index: 10000;
+                  background: #fff;
+                  top: -8px;
+                  font-size: 12px;
+                  font-weight: normal;
+                }
+              }
+
+              .stock-availability {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: start;
+                border-bottom: 1px solid #c4c4c4;
+
+                li {
+                  list-style: none;
+                  margin: 0;
+                  padding: 10px;
+                  font-size: 12px;
+
+                  i {
+                    font-size: 16px;
+                    padding-left: 3px;
+
+                    &.fa-check-circle {
+                      color: #0e8345;
+                    }
+
+                    &.fa-times-circle {
+                      color: red;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__m - 1)) {
+  .catalog-product-view {
+    .page-wrapper {
+      #maincontent {
+        .column.main {
+          .product-info-main {
+            .sillytools-stock-availability-wrapper {
+              .stock-availability {
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
