@@ -1,15 +1,15 @@
 {
-    "name": "magefan/module-og-tags",
-    "description": "Open Graph extension for Magento 2",
+    "name": "sillytools/module-warehouse-stock-status",
+    "description": "Warehouse Stock Status extension for Magento 2",
     "require": {
-        "magefan/module-community" : ">=2.1.10"
+        "sillytools/module-core" : ">=1.0.0"
     },
     "type": "magento2-module",
-    "version": "2.0.14",
+    "version": "1.0.0",
     "autoload": {
         "files": [ "registration.php" ],
         "psr-4": {
-            "Magefan\\OgTags\\": ""
+            "SillyTools\\WarehouseStockStatus\\": ""
         }
     }
 }
