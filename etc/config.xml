@@ -4,7 +4,7 @@
     <default>
         <warehousestockstatus>
             <general>
-                <enable>0</enable>
+                <enable>1</enable>
             </general>
         </warehousestockstatus>
     </default>
